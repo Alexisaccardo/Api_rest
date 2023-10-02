@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "10705c51-8d5d-412e-bfed-4e67e359096f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29027861"
+	},
+	"item": [
+		{
+			"name": "Editar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code_admin\": \"100646\",\r\n    \"code\":\"1006589\",\r\n     \"name\": \"Andres\",\r\n    \"lastname\": \"Acosta\",\r\n    \"charge\": \"vigilante\",\r\n    \"date\": \"2023-10-02\",\r\n    \"bussines\": \"MeLi\"\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editar-usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editar-usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code_admin\": \"100646\",\r\n    \"code\":\"1006589\",\r\n     \"name\": \"Michael\",\r\n    \"lastname\": \"trujillo\",\r\n    \"charge\": \"Desarrollador jr\",\r\n    \"date\": \"2023-10-01\",\r\n    \"bussines\": \"MeLi\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/crear-usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crear-usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \r\n    \"100646\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/buscar-registros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"buscar-registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar_usu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"100646\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/buscar-usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"buscar-usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
