@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class Controlador {
     @PostMapping("/crear-usuario")
-    public String crearUsuario(@RequestBody Personas personas) throws SQLException, ClassNotFoundException {
+    public String createuser(@RequestBody Personas personas) throws SQLException, ClassNotFoundException {
 
         String code = personas.getCode_admin();
 
@@ -29,9 +29,9 @@ public class Controlador {
             Register(code, name, lastname, charge, date, bussines);
         }
 
-        String respuesta = " Usuario registrado de manera exitosa";
+        String answer = " Usuario registrado de manera exitosa";
 
-        return respuesta;
+        return answer;
     }
 
     private String Select_admin(String code) throws SQLException, ClassNotFoundException {
@@ -116,11 +116,11 @@ public class Controlador {
     }
 
     @GetMapping("/buscar-registros")
-    public List<Personas> buscarregistros() throws SQLException, ClassNotFoundException {
+    public List<Personas> searchrecord() throws SQLException, ClassNotFoundException {
 
         List<Personas> list = Selectconsul();
 
-        String respuesta = "Estoy en el metodo de buscar";
+        String answer = "Estoy en el metodo de buscar";
 
 
         return list;
@@ -159,7 +159,7 @@ public class Controlador {
     }
 
     @PostMapping("/editar-usuario")
-    public String editarUsuario(@RequestBody Personas personas) throws SQLException, ClassNotFoundException {
+    public String edituser(@RequestBody Personas personas) throws SQLException, ClassNotFoundException {
 
         String code = personas.getCode_admin();
 
@@ -173,17 +173,17 @@ public class Controlador {
             String date = personas.getDate();
             String bussines = personas.getBussines();
 
-            Editar(code, name, lastname, charge, date, bussines);
+            Edit(code, name, lastname, charge, date, bussines);
         }
 
 
-        String respuesta = " Usuario editado de manera exitosa";
+        String answer = " Usuario editado de manera exitosa";
 
-        return respuesta;
+        return answer;
 
     }
 
-    private void Editar(String code, String name, String lastname, String charge, String date, String bussines) throws ClassNotFoundException, SQLException {
+    private void Edit(String code, String name, String lastname, String charge, String date, String bussines) throws ClassNotFoundException, SQLException {
 
         String driver2 = "com.mysql.cj.jdbc.Driver";
         String url2 = "jdbc:mysql://localhost:3306/api_rest";
@@ -216,7 +216,7 @@ public class Controlador {
     }
 
     @GetMapping("/buscar-usuario")
-    public Personas buscarUsuario(@RequestBody Personas personas) throws SQLException, ClassNotFoundException {
+    public Personas searchuser(@RequestBody Personas personas) throws SQLException, ClassNotFoundException {
 
         String documento = personas.getCode();
 
